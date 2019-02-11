@@ -23,7 +23,7 @@ class NoItemBurn : JavaPlugin(), Listener {
         this.server.pluginManager.registerEvents(this, this)
     }
 
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOW)
     fun onDrop(event: EntitySpawnEvent) {
         if (event.entity.type == EntityType.DROPPED_ITEM) {
             val field = Entity::class.java.getDeclaredField("fireProof")
