@@ -1,9 +1,12 @@
 package me.devsnox.noitemburn
 
+import net.minecraft.server.v1_8_R3.Entity
+import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity
+import org.bukkit.entity.EntityType
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
-import org.bukkit.event.player.PlayerDropItemEvent
+import org.bukkit.event.entity.EntitySpawnEvent
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
@@ -21,11 +24,11 @@ class NoItemBurn : JavaPlugin(), Listener {
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
-    fun onDrop(event: PlayerDropItemEvent) {
-        val item = event.itemDrop
-
-        val field = item.javaClass.getDeclaredField("invulnerable")
-        field.isAccessible = true
-        field.setBoolean(item, true)
+    fun onDrop(event: EntitySpawnEvent) {
+        if (event.entity.type == EntityType.DROPPED_ITEM) {
+            val field = Entity::class.java.getDeclaredField("fireProof")
+            field.isAccessible = true
+            field.setBoolean((event.entity as CraftEntity).handle, true)
+        }
     }
 }
