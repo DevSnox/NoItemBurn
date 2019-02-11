@@ -1,0 +1,4 @@
+name: NoItemBurn
+author: DevSnox
+version: "1.0-SNAPSHOT"
+main: me.devsnox.noitemburn.NoItemBurn
