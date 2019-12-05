@@ -30,10 +30,9 @@ class NoItemBurn : JavaPlugin(), Listener {
     fun onBreak(event: BlockBreakEvent) {
         if(event.player.hasPermission(this.permission)) {
             val block = event.block
-            val drops = block.drops
 
             block.type = Material.AIR
-            drops.forEach { this.fireProtection(block.world.dropItem(block.location, it)) }
+            block.drops.forEach { this.fireProtection(block.world.dropItem(block.location, it)) }
         }
     }
 
