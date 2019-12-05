@@ -1,0 +1,13 @@
+# You can use BLACKLIST and WHITELIST
+item-list-type: BLACKLIST
+
+# The list connected to the "item-list-type"
+item-list:
+  - STONE
+
+# Boolean for enabling or disabling world limited mechanics
+world-check-enabled: false
+
+# Whitelisted worlds
+worlds:
+  - world
