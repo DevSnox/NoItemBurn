@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin
 
 /**
  * Created by Yasin Dalal on 12.02.18
- * Copyright (c) 2018 Yasin Dalal
+ * Copyright (c) 2018-2019 Yasin Dalal
  * GitHub: https://github.com/DevSnox
  * E-Mail: yasin@dalal.ch
  */
